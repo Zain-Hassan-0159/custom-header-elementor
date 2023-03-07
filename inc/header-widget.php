@@ -2174,7 +2174,8 @@ class CustomHeaderWidget extends \Elementor\Widget_Base {
                       jQuery('.main-header').removeClass("inverse");
                   });
           });
-          jQuery(window).scroll(function() {
+		  if (jQuery(window).width() > 768) {
+			            jQuery(window).scroll(function() {
 
               if (jQuery(this).scrollTop() > 80) {
                   jQuery('.nav-wrapper').stop().fadeOut(100);
@@ -2182,6 +2183,8 @@ class CustomHeaderWidget extends \Elementor\Widget_Base {
                   jQuery('.nav-wrapper').stop().fadeIn(100);
               };
           });
+			}
+
 
         if (jQuery(window).width() < 768) {
             jQuery('li .mega-menu').parent().toggleClass('open');
